@@ -42,3 +42,10 @@ def dashboard(request):
 def logout_view(request):
     logout(request)
     return redirect("/login")
+
+@login_required
+def join_room(request):
+    if request.method == 'POST':
+        roomID = request.POST['roomID']
+        return redirect("/meeting?roomID=" + roomID)
+    return render(request, 'joinroom.html')

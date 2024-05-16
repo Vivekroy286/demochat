@@ -36,6 +36,11 @@ def login_view(request):
 def dashboard(request):
     return render(request, 'dashboard.html', {'name': request.user.first_name})
 
+@login_required
+def videocall(request):
+    return render(request, 'video.html', {'name': request.user.first_name + " " + request.user.last_name})
+
+
 
 
 @login_required

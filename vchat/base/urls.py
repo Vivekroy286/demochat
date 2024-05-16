@@ -8,7 +8,7 @@ urlpatterns = [
     path('',views.index, name='index'),
     path('logout/',views.logout_view, name='logout'),
     path('join/',views.join_room, name='join_room'),
-    
+    path('meeting/',views.videocall, name='meeting'),
     
     # Add more URL patterns as needed
 ]

@@ -14,7 +14,7 @@
         <div class="dashboard">
             <h1>Welcome, {{name}}!</h1>
             <!-- create a "New Meeting" button -->
-            <a href="" class="button">New Meeting</a>
+            <a href="{% url 'meeting' %}" class="button">New Meeting</a>
             <a href="{% url 'join_room' %}" class="button">Join Meeting</a>
             <a href="{% url 'logout' %}" class="button">Logout</a>
         </div>

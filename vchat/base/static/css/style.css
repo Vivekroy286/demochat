@@ -245,7 +245,7 @@ body {
     grid-template-columns: 60% 20%;
 }
 
-.video {
+video {
     border-radius: 25%;
     background-color: black;
 }

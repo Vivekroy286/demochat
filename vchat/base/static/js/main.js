@@ -28,6 +28,19 @@ btnJoin.addEventListener('click', () => {
     var labelUsername = document.querySelector('#label_username');
     labelUsername.innerHTML = username;
 
+    var loc = window.location;
+    var wsStart = 'ws://';
+
+    if (loc.protocol == 'https:') {
+        wsStart = 'wss://';
+
+    }
+
+    var endPoint = wsStart + loc.host + loc.pathname
+
+    console.log('endPoint: ', endPoint)
+
+
 
 
 

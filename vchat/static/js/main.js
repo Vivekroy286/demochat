@@ -377,3 +377,7 @@ function getDataChannels() {
     }
     return datachannels;
 }
+
+document.getElementById('btn-log-out').addEventListener('click', (e) => {
+    window.location.href = "/login";
+})

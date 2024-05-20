@@ -31,7 +31,7 @@ function webSocketOnMessage(event) {
     if (action == 'new-offer') {
         var offer = parsedData['message']['sdp'];
 
-        createAnswerer(peerUsername, receiver_channel_name);
+        createAnswerer(offer, peerUsername, receiver_channel_name);
 
         return;
     }
@@ -41,7 +41,7 @@ function webSocketOnMessage(event) {
 
         var peer = mapPeers[peerUsername][0];
 
-        peer.setLocalDescription(answer);
+        peer.setRemoteDescription(answer);
 
         return;
     }
@@ -108,6 +108,7 @@ const constraints = {
     'video': true,
     'audio': true
 };
+
 const localVideo = document.querySelector('#local-video');
 
 const btnToggleAudio = document.querySelector('#btn-toggle-audio');
@@ -222,7 +223,7 @@ function createOfferer(peerUsername, receiver_channel_name) {
             removeVideo(remoteVideo);
 
         }
-    })
+    });
 
     peer.addEventListener('icecandidate', (event) => {
         if (event.candidate) {
@@ -353,7 +354,7 @@ function setOnTrack(peer, remoteVideo) {
     peer.addEventListener('track', async(event) => {
         remoteStream.addTrack(event.track, remoteStream);
 
-    })
+    });
 
 }
 

@@ -1,4 +1,4 @@
-{% load static %}
+{% load static tailwind_tags %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,16 +8,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vchat</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 
     <body>
-        <div class="intro">
-            <h1>Welcome to my Vchat App!</h1>
-            <h2>For all your professional and personal needs!</h2>
-            <!-- create a signup and signin button-->
-            <a href="{% url 'login' %}" class="button">Sign In</a>
-            <a href="{% url 'register' %}" class="button">Sign Up</a>
+        <header class="bg-gray-900 text-white flex items-center justify-between py-4 px-6">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="" alt="Logo" class="h-8 mr-2">
+                <h1 class="text-lg font-semibold">Vchat</h1>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="flex items-center">
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="hover:text-gray-300">Home</a></li>
+                    <li><a href="#" class="hover:text-gray-300">About</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Services</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Buttons -->
+            <div class="flex items-center space-x-4">
+                <a href="{% url 'login' %}" <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Sign In</button></a>
+                <a href="{% url 'register' %}" <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded">Sign Up, It's Free</button></a>
+            </div>
+        </header>
+        <div class="flex h-screen bg-gradient-to-r from-sky-100 to-sky-400 justify-center ">
+            <div class="container mx-auto mt-8">
+                <h2 class="text-5xl font-serif text-center mt-25">Welcome to Our Vchat Website</h2>
+                <h1 class="w-1/2 text-4xl font-semibold text-center mt-10">Bringing people closer, no matter the distance.</h1>
+                <div class="flex">
+                    <div class="w-1/2 text-2xl font-thin text-center mt-14">
+                        <!-- Left half content goes here -->
+                        <p>Experience seamless video calls with crystal-clear quality. Connect with friends, family, or colleagues from anywhere in the world. Enjoy hassle-free setup and intuitive interface. Stay connected, share moments, and collaborate
+                            effortlessly. Join the conversation today with our reliable video call platform.</p>
+                    </div>
+                    <div class="w-1/2 rounded-lg overflow-hidden  md:mt-0 ml-4 md:ml-16 ">
+                        <!-- Right half content goes here -->
+                        <img src="https://media.istockphoto.com/id/1404293231/photo/african-american-business-woman-sits-in-front-of-a-computer-screen-talks-via-video-link-with.jpg?s=1024x1024&w=is&k=20&c=Z-wkcNvujHDo22H6YJY4dD8sjRLUexfOwb2R2NTS8nI=" alt="Image" class="max-h-fit h-auto rounded-lg">
+                    </div>
+                </div>
+            </div>
         </div>
+        <footer class="bg-gray-800 py-4">
+            <div class="container mx-auto flex items-center justify-between text-gray-400">
+                <div>
+                    <p>&copy; 2024 Vchat. All rights reserved.</p>
+                </div>
+                <div>
+                    <a href="#" class="mr-4">Terms and Conditions</a>
+                    <a href="#" class="mr-4">Cookies</a>
+                    <a href="{% url 'register' %}" <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Sign Up, It's Free</button></a>
+                </div>
+            </div>
+        </footer>
+
+
+        {% tailwind_css %}
+
     </body>
 </head>
 

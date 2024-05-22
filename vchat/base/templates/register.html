@@ -8,11 +8,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!---Custom CSS File--->
-    <link rel="stylesheet" href="{% static 'css/dist/style.css' %}">{% tailwind_css %}
+
 </head>
 
 <body>
+    <header class="bg-gray-900 text-white flex items-center justify-between py-4 px-6">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <img src="" alt="Logo" class="h-8 mr-2">
+            <h1 class="text-lg font-semibold">Vchat</h1>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex items-right">
+            <ul class="flex space-x-6">
+
+                <li><a href="#" class="hover:text-gray-300">Services</a></li>
+                <li><a href="#" class="hover:text-gray-300">Contact</a></li>
+            </ul>
+        </nav>
+
+
+    </header>
     <div class="container">
         <div class="registration form">
             <header>Signup</header>
@@ -38,6 +55,7 @@
             </div>
         </div>
     </div>
+    {% tailwind_css %}
 </body>
 
 </html>

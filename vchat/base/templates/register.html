@@ -30,31 +30,75 @@
 
 
     </header>
-    <div class="container">
-        <div class="registration form">
-            <header>Signup</header>
-            <form action="{% url 'register' %}" method="POST">
-                {% csrf_token %}
-                <input type="text" placeholder="Enter your first name" name="first_name">
-                <input type="text" placeholder="Enter your last name" name="last_name">
-                <input type="text" placeholder="Enter your email" name="email">
-                <input type="password" placeholder="Create a password" name="password1">
-                <input type="password" placeholder="Confirm your password" name="password2">
-                <input type="submit" class="button" value="Signup">
-                <center>
-                    {% if error %}
-                    <p style="color: red;">{{ error }}</p>
-                    {% endif %}
-                </center>
+    <div class="flex h-screen bg-gradient-to-r from-stone-400 to-zinc-600 justify-center ">
+        <div class="max-w-md w-full space-y-8">
+            <div class="mt-6 text-center text-3xl font-semibold text-gray-900">
+                <h2 class="text-5xl font-bold mb-4">Register</h2>
 
-            </form>
-            <div class="signup">
-                <span class="signup">Already have an account?
-          <a href="{% url 'login' %}"><label for="check">Signin</label></a>
-        </span>
+                <form class="mt-8 space-y-6" action="{% url 'register' %}" method="POST">
+                    <div class="rounded-md shadow-sm -space-y-px">
+                        {% csrf_token %}
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-semibold mb-2"></label>
+                            <input type="text" id="name" name="name" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Enter your first name" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 font-semibold mb-2"></label>
+                            <input type="text" id="name" name="name" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Enter your last name" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 font-semibold mb-2"></label>
+                            <input type="email" id="email" name="email" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="password" class="block text-gray-700 font-semibold mb-2"></label>
+                            <input type="password" id="password" name="password" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Create a password" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="password_confirmation" class="block text-gray-700 font-semibold mb-2"></label>
+                            <input type="password" id="password_confirmation" name="password_confirmation" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Confirm your Password" required>
+                        </div>
+                        <div class="flex text-sm items-center mt-4 mb-4">
+                            <input type="checkbox" id="agree" name="agree" class="mr-2">
+                            <label for="agree" class="  text-gray-700">I agree to the <a href="#" class="text-blue-900">terms and conditions</a>.</label>
+                        </div>
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600 transition duration-300" value="Signup">Register</button>
+
+                        <center>
+                            {% if error %}
+                            <p style="color: rgb(161, 22, 22);">{{ error }}</p>
+                            {% endif %}
+                        </center>
+                    </div>
+                </form>
+                <div class="signup mt-4 text-sm">
+                    <span>Already have an account? <a href="{% url 'login' %}" class="text-blue-500">Sign in</a></span>
+                </div>
+
             </div>
         </div>
     </div>
+    </div>
+    <footer class="bg-gray-800 py-4 ">
+
+        <div class="container mx-auto flex items-center justify-between text-gray-400">
+            <select class="border bg-gray-800 rounded px-4 py-2  focus:outline-none focus:border-blue-500">
+            <option value="country1">India</option>
+            <option value="country2">United States</option>
+            <option value="country3">Australia</option>
+            <!-- Add more countries as needed -->
+        </select>
+
+
+            <select class="border bg-gray-800 rounded px-4 py-2  focus:outline-none focus:border-blue-500">
+            <option value="english">English</option>
+            <option value="spanish">Spanish</option>
+            <option value="french">French</option>
+            <!-- Add more languages as needed -->
+        </select>
+            <div class="mt-0">&copy; 2024 Vchat. All rights reserved.</div>
+        </div>
+    </footer>
     {% tailwind_css %}
 </body>
 

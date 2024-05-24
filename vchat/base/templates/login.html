@@ -7,35 +7,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--<title>Login & Registration Form | CoderGirl</title>-->
-    <!---Custom CSS File--->
-    <link rel="stylesheet" href="{% static 'css/dist/styles.css' %}">{% tailwind_css %}
+
 </head>
 
 <body>
-    <div class="container">
-        <div class="login form">
-            <header>Login</header>
-            <form action="{% url 'login' %}" method="POST">
-                {% csrf_token %}
-                <input type="text" placeholder="Enter your email" name="email">
-                <input type="password" placeholder="Enter your password" name="password">
-                <input type="submit" class="button" value="Login">
-                <center>
-                    {% if success %}
-                    <p style="color: green;"><b>{{ success }}</b></p>
-                    {% endif %} {% if error %}
-                    <p style="color: red;">{{ error }}</p>
-                    {% endif %}
-                </center>
-            </form>
-            <div class="signup">
-                <span class="signup">Don't have an account?
-         <a href="{% url 'register' %}"><label for="check">Signup</label></a>
-        </span>
+    <header class="bg-gray-900 text-white flex items-center justify-between py-4 px-6">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <img src="" alt="Logo" class="h-8 mr-2">
+            <h1 class="text-lg font-semibold">Vchat</h1>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex items-right">
+            <ul class="flex space-x-6">
+
+
+            </ul>
+        </nav>
+
+
+    </header>
+    <div class="flex h-screen bg-gradient-to-r from-stone-400 to-zinc-600 justify-center ">
+
+        <div class="max-w-md w-full space-y-8">
+            <div class="mt-6 text-center text-3xl font-semibold text-gray-900">
+                <h2 class="text-5xl font-bold mb-4">Login</h2>
+
+
+                <form action="{% url 'login' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-4">
+                        <input type="text" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Enter your email" name="email">
+                    </div>
+                    <div class="mb-4">
+                        <input type="password" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Enter your password" name="password">
+                    </div>
+                    <div class="mb-6">
+                        <input type="submit" class="bg-blue-500 text-white px-2 py-1 rounded mt-4 hover:bg-blue-600 transition duration-300" value="Login">
+                    </div>
+                    <center>
+                        {% if success %}
+                        <p style="color: green;"><b>{{ success }}</b></p>
+                        {% endif %} {% if error %}
+                        <p style="color: red;">{{ error }}</p>
+                        {% endif %}
+                    </center>
+                </form>
+                <div class="signup mt-4 text-xl">
+                    <span class="signup">Don't have an account?<a href="{% url 'register' %}" class="text-blue-500">Sign up</a></span>
+                </div>
             </div>
         </div>
     </div>
+    </div>
+    </div>
+    {% tailwind_css %}
 </body>
 
 </html>

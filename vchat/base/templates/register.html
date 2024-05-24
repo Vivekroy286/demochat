@@ -31,54 +31,44 @@
 
     </header>
     <div class="flex h-screen bg-gradient-to-r from-stone-400 to-zinc-600 justify-center ">
+
         <div class="max-w-md w-full space-y-8">
             <div class="mt-6 text-center text-3xl font-semibold text-gray-900">
                 <h2 class="text-5xl font-bold mb-4">Register</h2>
 
                 <form action="{% url 'register' %}" method="POST">
-
                     {% csrf_token %}
                     <div class="mb-4">
-
-                        <input type="text" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Enter your first name" required>
+                        <input type="text" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Enter your first name" name="first_name">
                     </div>
                     <div class="mb-4">
-
-                        <input type="text" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Enter your last name" required>
+                        <input type="text" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Enter your last name" name="last_name">
                     </div>
                     <div class="mb-4">
-
-                        <input type="email" name="email" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Enter your email" required>
+                        <input type="text" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Enter your email" name="email">
                     </div>
                     <div class="mb-4">
-
-                        <input type="password" name="password" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Create a password" required>
+                        <input type="password" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Create a password" name="password1">
                     </div>
-                    <div class="mb-6">
-
-                        <input type="password" name="password_confirmation" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Confirm your Password" required>
+                    <div class="mb-4">
+                        <input type="password" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Confirm your password" name="password2">
                     </div>
                     <div class="flex text-sm items-center mt-4 mb-4">
                         <input type="checkbox" id="agree" name="agree" class="mr-2">
                         <label for="agree" class="  text-gray-700">I agree to the <a href="#" class="text-blue-900">terms and conditions</a>.</label>
                     </div>
-                    <div class="mb-6">
-                        <input type="submit" class="bg-blue-500 text-white px-2 py-1 rounded mt-4 hover:bg-blue-600 transition duration-300" value="Login">
+                    <div class="mb-4">
+                        <input type="submit" class="bg-blue-500 text-white px-2 py-1 rounded mt-4 hover:bg-blue-600 transition duration-300" class="button" value="Signup">
                     </div>
-
-
                     <center>
                         {% if error %}
-                        <p style="color: rgb(161, 22, 22);">{{ error }}</p>
+                        <p style="color: red;">{{ error }}</p>
                         {% endif %}
                     </center>
-
                 </form>
-                <div class="signup mt-4 text-sm">
-                    <span class="signin">Already have an account? <a href="{% url 'login' %}" class="text-blue-500">Sign in</a></span>
+                <div class="signup mt-4 text-xl">
+                    <span class="signup">Already have an account?<a href="{% url 'login' %}" class="text-blue-900"><label for="check">Signin</label></a></span>
                 </div>
-
-
             </div>
         </div>
     </div>

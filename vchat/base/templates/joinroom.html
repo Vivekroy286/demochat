@@ -1,35 +1,84 @@
 {% load static tailwind_tags %}
 <!DOCTYPE html>
-<!---Coding By CoderGirl | www.codinglabweb.com--->
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--<title>Login & Registration Form | CoderGirl</title>-->
-    <!---Custom CSS File--->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">{% tailwind_css %}
+
+
 </head>
 
 <body>
-    <div class="container">
-        <div class="login form">
-            <header>Join Room</header>
-            <form action="{% url 'join_room' %}" method="POST">
-                {% csrf_token %}
-                <input type="text" placeholder="Enter room ID" name="roomID">
-                <input type="submit" class="button" value="Join">
-                <center>
-                    {% if success %}
-                    <p style="color: green;"><b>{{ success }}</b></p>
-                    {% endif %} {% if error %}
-                    <p style="color: red;">{{ error }}</p>
-                    {% endif %}
-                </center>
-            </form>
+    <header class="bg-gray-900 text-white flex items-center justify-between py-4 px-6">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <img src="" alt="Logo" class="h-8 mr-2">
+            <h1 class="text-lg font-semibold text-blue-700">Vchat</h1>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex items-right">
+            <ul class="flex space-x-6">
+                <li><a href="{% url 'dashboard' %}" class="text-gray-400  hover:text-gray-600">Go To Dasboard</a></li>
+            </ul>
+
+        </nav>
+        <select class="border bg-gray-800 rounded px-4 py-2  focus:outline-none focus:border-blue-500">
+            <option value="More">More</option>
+            <option value="">Features</option>
+            <option value="">Your Impact</option>
+            <option value="">Working</option>
+            <option value="">video call</option>
+            <option value="">audio call</option>
+            <option value="">Support center</option>
+            <!-- Add more languages as needed -->
+        </select>
+
+
+    </header>
+    <div class="flex h-screen bg-gradient-to-br from-stone-800 to-blue-900 justify-center  ">
+        <div class="max-w-md w-full space-y-8">
+
+            <div class="mt-48 text-center text-3xl font-semibold text-gray-900">
+                <h1 class="text-5xl font-thin mb-4">Join Room</h1>
+
+                <form action="{% url 'join_room' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="mb-6 mt-6">
+                        <input type="text" class="  px-10 py-2" placeholder="Enter room ID" name="roomID">
+                    </div>
+                    <div class="mb-6 mt-6">
+                        <input type="submit" class="bg-blue-500 text-white px-6 py-0.5 rounded mt-4 hover:bg-blue-600 transition duration-300" class='button' value="Join">
+                    </div>
+                    <center>
+                        {% if success %}
+                        <p style="color: green;"><b>{{ success }}</b></p>
+                        {% endif %} {% if error %}
+                        <p style="color: red;">{{ error }}</p>
+                        {% endif %}
+                    </center>
+                </form>
+            </div>
         </div>
     </div>
+    <footer class="bg-gray-800 py-4 ">
+
+        <div class="container mx-auto flex items-center justify-between text-gray-400">
+            <select class="border bg-gray-800 rounded px-4 py-2  focus:outline-none focus:border-blue-500">
+            <option value="english">English</option>
+            <option value="spanish">Spanish</option>
+            <option value="french">French</option>
+            <!-- Add more languages as needed -->
+        </select>
+            <div class="mt-0">&copy; 2024 Vchat. All rights reserved.</div>
+            <div class="mt-0">Help</div>
+            <div class="mt-0">&copy; 2024 Vchat Terms and Services</div>
+        </div>
+    </footer>
+    {% tailwind_css %}
 </body>
 
 </html>

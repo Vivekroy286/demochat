@@ -15,7 +15,7 @@
             <!-- Logo -->
             <div class="flex items-center">
                 <img src="" alt="Logo" class="h-8 mr-2">
-                <h1 class="text-lg font-semibold">Vchat</h1>
+                <h1 class="text-lg font-semibold text-blue-700">Vchat</h1>
             </div>
 
             <!-- Navigation -->
@@ -25,6 +25,16 @@
 
                 </ul>
             </nav>
+            <select class="border bg-gray-800 rounded px-4 py-2  focus:outline-none focus:border-blue-500">
+                <option value="">More</option>
+                <option value="">Features</option>
+                <option value="">Your Impact</option>
+                <option value="">Working</option>
+                <option value="">video call</option>
+                <option value="">audio call</option>
+                <option value="">Support center</option>
+                <!-- Add more languages as needed -->
+            </select>
 
 
         </header>
@@ -34,7 +44,9 @@
                 <div class="mt-48 text-center text-3xl font-semibold text-gray-900">
 
 
-                    <h1>Welcome, {{name}}!</h1>
+
+                    <h1 class="text-3xl font-serif mb-4">Welcome, {{name}}!</h1>
+
                     <!-- create a "New Meeting" button -->
                     <div class="mb-6 mt-6">
                         <a href="{% url 'meeting' %}" <button class="bg-blue-700 hover:bg-blue-600 text-red-200 px-8 py-1 rounded">New Meeting</button></a>
@@ -43,7 +55,7 @@
                         <a href="{% url 'join_room' %}" <button class="bg-blue-700 hover:bg-blue-600 text-red-200 px-8 py-1 rounded">Join Meeting</button></a>
                     </div>
                     <div class="mb-6 mt-6">
-                        <a href="{% url 'logout' %}" <button class="bg-blue-700 hover:bg-blue-600 text-red-200 px-8 py-1 rounded">Logout</button></a>
+                        <a href="{% url 'logout' %}" <button class="bg-blue-700 hover:bg-blue-600 text-red-200 px-10 py-0.5 rounded">Logout</button></a>
                     </div>
 
                 </div>

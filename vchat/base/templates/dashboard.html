@@ -8,16 +8,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Video Conference</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">{% tailwind_css %}
+
 
     <body>
-        <div class="dashboard">
-            <h1>Welcome, {{name}}!</h1>
-            <!-- create a "New Meeting" button -->
-            <a href="{% url 'meeting' %}" class="button">New Meeting</a>
-            <a href="{% url 'join_room' %}" class="button">Join Meeting</a>
-            <a href="{% url 'logout' %}" class="button">Logout</a>
+        <header class="bg-gray-900 text-white flex items-center justify-between py-4 px-6">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="" alt="Logo" class="h-8 mr-2">
+                <h1 class="text-lg font-semibold">Vchat</h1>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="flex items-right">
+                <ul class="flex space-x-6">
+
+
+                </ul>
+            </nav>
+
+
+        </header>
+        <div class="flex h-screen bg-gradient-to-br from-stone-800 to-blue-900 justify-center  ">
+            <div class="max-w-md w-full space-y-8">
+
+                <div class="mt-48 text-center text-3xl font-semibold text-gray-900">
+
+
+                    <h1>Welcome, {{name}}!</h1>
+                    <!-- create a "New Meeting" button -->
+                    <div class="mb-6 mt-6">
+                        <a href="{% url 'meeting' %}" <button class="bg-blue-700 hover:bg-blue-600 text-red-200 px-8 py-1 rounded">New Meeting</button></a>
+                    </div>
+                    <div class="mb-6 mt-6">
+                        <a href="{% url 'join_room' %}" <button class="bg-blue-700 hover:bg-blue-600 text-red-200 px-8 py-1 rounded">Join Meeting</button></a>
+                    </div>
+                    <div class="mb-6 mt-6">
+                        <a href="{% url 'logout' %}" <button class="bg-blue-700 hover:bg-blue-600 text-red-200 px-8 py-1 rounded">Logout</button></a>
+                    </div>
+
+                </div>
+
+            </div>
         </div>
+        <footer class="bg-gray-800 py-4 ">
+
+            <div class="container mx-auto flex items-center justify-between text-gray-400">
+                <select class="border bg-gray-800 rounded px-4 py-2  focus:outline-none focus:border-blue-500">
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>
+                <option value="french">French</option>
+                <!-- Add more languages as needed -->
+            </select>
+                <div class="mt-0">&copy; 2024 Vchat. All rights reserved.</div>
+                <div class="mt-0">Help</div>
+                <div class="mt-0">&copy; 2024 Vchat Terms and Services</div>
+            </div>
+        </footer>
+        {% tailwind_css %}
     </body>
 </head>
 

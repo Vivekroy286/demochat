@@ -99,7 +99,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.parse('postgres://vchat_user:m8oSOVsdtTiCaBzzzAn6TLl0F6YIffuK@dpg-cpa6s4n109ks73aj0g50-a.oregon-postgres.render.com/vchat')
+DATABASES['default'] = dj_database_url.parse(os.environ.get("DATABASE_URL"))
 
 
 # Password validation

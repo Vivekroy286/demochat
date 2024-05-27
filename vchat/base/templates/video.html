@@ -7,44 +7,90 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
+    <header class="bg-gray-900 text-white flex items-center justify-between py-4 px-6">
+        <!-- Logo -->
+        <div class="flex items-center">
+            <img src="" alt="Logo" class="h-8 mr-2">
+            <h1 class="text-lg font-semibold text-blue-700">Vchat</h1>
+        </div>
 
-    <title>Vchat</title>
+        <!-- Navigation -->
+        <nav class="flex items-right">
+            <ul class="flex space-x-6">
+
+            </ul>
+
+        </nav>
+        <select class="border bg-gray-800 rounded px-4 py-2  focus:outline-none focus:border-blue-500">
+            <option value="More">My Profile</option>
+            <option value="">Features</option>
+            <option value="">Your Impact</option>
+            <option value="">Working</option>
+            <option value="">video call</option>
+            <option value="">audio call</option>
+            <option value="">Support center</option>
+            <!-- Add more languages as needed -->
+        </select>
 
 
-
-    {% tailwind_css %}
+    </header>
 </head>
 
 <body>
-    <h3 id="label_username">USERNAME</h3>
-
-    <div>
-        <input id="username"><button id="btn-join">Join Room</button>
-    </div>
-
-    <div class="main-grid-container">
-        <div id="video-container">
-            <div><video id="local-video" style="float: left;" autoplay playsinline></video></div>
-            <button id="btn-toggle-audio">Audio Mute</button>
-            <button id="btn-toggle-video">Video Off</button>
 
 
+    <div class="relative h-screen">
+        <!-- Video Container -->
+        <div id="video-container" class="absolute inset-0 ">
+            <video id="local-video" class="w-full h-full object-cover" autoplay playsinline></video>
+            <video id="remote-video" class="w-full h-full object-cover absolute " autoplay playsinline></video>
         </div>
 
 
-        <div id="chat">
-            <h3>CHAT</h3>
-            <div id="messages">
-                <ul id="message-list"></ul>
+        <!-- Username Container -->
+        <div id="username-container" class="absolute top-0 left-0 bg-transparent p-8">
+            <div class="flex flex-col items-center">
+                <h3 class="text-2xl font-bold mb-4 text-lg" id="label_username">USERNAME</h3>
+                <input id="username" class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 bg-white text-black mb-4">
+                <button id="btn-join" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Join Room</button>
             </div>
+        </div>
+        <!-- Chat Container -->
+        <div id="chat" class="absolute top-0 right-0 m-4 z-10">
+            <div class="bg-transparent p-4 rounded-lg shadow-md">
+                <h3 class="text-lg font-semibold mb-4">CHAT</h3>
+                <div id="messages" class="mb-4">
+                    <ul id="message-list"></ul>
+                </div>
 
-            <div><input id="msg"><button id="btn-send-msg">Send Message></button></div>
-            <button id="btn-log-out">Log Out</button>
+                <div class="flex mb-4">
+                    <input id="msg" type="text" class="flex-1 border border-gray-300 rounded-l-md px-4 py-2 focus:outline-none focus:border-blue-500">
+                    <button id="btn-send-msg" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-r-md">Send Message</button>
+                </div>
+                <button id="btn-log-out" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">Log Out</button>
+            </div>
+        </div>
 
+        <!-- Audio and Video Controls -->
+        <div class="absolute bottom-0 left-0 right-0 flex justify-center mb-4">
+            <button id="btn-toggle-audio" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2">Audio Mute</button>
+            <button id="btn-toggle-video" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ml-2">Video Off</button>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    {% tailwind_css %}
 </body>
 
 </html>

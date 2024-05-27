@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-l3_0tz-@ylvjxr2@^59p%gmd@9yqu2q#!)@-(u584%w4!0orvb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -99,7 +99,9 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.parse(os.environ.get("DATABASE_URL"))
+DATABASES ={
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+}
 
 
 # Password validation

@@ -19,6 +19,7 @@ dj-database-url==2.1.0
 Django==5.0.6
 django-browser-reload==1.12.1
 django-tailwind==3.8.0
+gunicorn==19.7.1
 hyperlink==21.0.0
 idna==3.7
 incremental==22.10.0

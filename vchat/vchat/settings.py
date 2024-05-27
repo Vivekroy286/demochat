@@ -98,10 +98,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+database_url = os.environ.get('DATABASE_URL')
+DATABASES['default'] = dj_database_url.parse(database_url)
 
-DATABASES ={
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-}
 
 
 # Password validation

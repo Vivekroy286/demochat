@@ -24,4 +24,3 @@ urlpatterns = [
     path("__reload__/", include("django_browser_reload.urls")),
 ]
 
-urlpatterns += staticfiles_urlpatterns()

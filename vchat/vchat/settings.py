@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 import dj_database_url
+import environs
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -105,11 +106,12 @@ WSGI_APPLICATION = 'vchat.wsgi.application'
 
 
 
-DATABASES = {
-    'default': {
-        dj_database_url.parse(os.environ.get('DATABASE_URL'))
-        
-    }    
+env=environs.Env() #create the environs object
+environs.Env.read_env()
+
+DATABASES={
+'default':dj_database_url.parse(env('DATABASE_URL')) # linked .env file to your settings
+
 }
     
 
@@ -148,6 +150,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
+
+STATIC_ROOT=os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = 'static/'
 

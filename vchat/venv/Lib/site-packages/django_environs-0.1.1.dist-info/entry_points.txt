@@ -1,0 +1,3 @@
+[console_scripts]
+django-environs=django_environs.management:execute_from_command_line
+

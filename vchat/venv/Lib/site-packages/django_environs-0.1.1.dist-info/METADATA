@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: django-environs
+Version: 0.1.1
+Summary: A cli tool for bootstraping django projects with environs settings
+Home-page: https://github.com/jwygoda/django-environs
+License: UNKNOWN
+Author: Jarosław Wygoda
+Author-email: jaroslaw@wygoda.me
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: django
+Requires-Dist: environs[django]
+Requires-Dist: redbaron
+Requires-Dist: black; extra == "dev"
+Requires-Dist: isort; extra == "dev"
+Requires-Dist: tox; extra == "test"
+Provides-Extra: dev
+Provides-Extra: test
+
+# django-environs
+
+**django-environs** is a cli tool for bootstraping Django projects with
+[environs](https://github.com/sloria/environs) settings.
+
+## Install
+`pip install django-environs`
+
+django-environs requires Python 3.6 or higher.
+
+## Usage
+`django-environs startproject example`
+
+See [settings.py](https://github.com/jwygoda/django-environs/blob/master/example/example/settings.py)
+for some example output.
+
+[environs[django]](https://github.com/sloria/environs) is required to run django-environs
+bootstraped project.
+

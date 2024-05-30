@@ -106,13 +106,13 @@ WSGI_APPLICATION = 'vchat.wsgi.application'
 
 
 
-env=environs.Env() #create the environs object
-environs.Env.read_env()
-
-DATABASES={
-'default':dj_database_url.parse(env('DATABASE_URL')) # linked .env file to your settings
-
+DATABASES = {
+    'default': dj_database_url.config(
+        default='postgres://vchat_user:m8oSOVsdtTiCaBzzzAn6TLl0F6YIffuK@dpg-cpa6s4n109ks73aj0g50-a.oregon-postgres.render.com/vchat',        
+        conn_max_age=600
+    )
 }
+
     
 
 
@@ -152,6 +152,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_ROOT=os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_URL = 'static/'
 

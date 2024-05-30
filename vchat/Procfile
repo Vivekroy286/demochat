@@ -1,1 +1,1 @@
-web: gunicorn vchat.wsgi
+web: gunicorn vchat.wsgi:application

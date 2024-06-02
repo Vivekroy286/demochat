@@ -97,21 +97,21 @@ WSGI_APPLICATION = 'vchat.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-"""DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}"""
+}
 
 
 
-DATABASES = {
+"""DATABASES = {
     'default': dj_database_url.config(
         default='postgres://vchat_user:m8oSOVsdtTiCaBzzzAn6TLl0F6YIffuK@dpg-cpa6s4n109ks73aj0g50-a.oregon-postgres.render.com/vchat',        
         conn_max_age=600
     )
-}
+}"""
 
     
 

@@ -106,9 +106,11 @@ DATABASES = {
         }
 }
 
-'''DATABASES = {
-    'default': dj_database_url.parse(env('DATABASE_URL'))
-    
+'''import dj_database_url
+
+# Use the dj_database_url.config() function to parse the DATABASE_URL environment variable
+DATABASES = {
+    'default': dj_database_url.config('postgres://vchat_user:m8oSOVsdtTiCaBzzzAn6TLl0F6YIffuK@dpg-cpa6s4n109ks73aj0g50-a.oregon-postgres.render.com/vchat')
 }'''
 
 
@@ -150,7 +152,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-#STATIC_ROOT=os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT=os.path.join(BASE_DIR, 'staticfiles')
 
 
 STATIC_URL = 'static/'

@@ -159,6 +159,10 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'theme/static')]
 
+# Add CSRF_TRUSTED_ORIGINS below the other CSRF settings or at the end of the file
+# Make sure to replace 'https://vchat-990c.onrender.com' with the actual URL of your Render deployment
+CSRF_TRUSTED_ORIGINS = ['https://vchat-990c.onrender.com']
+
 
 
 # Default primary key field type

@@ -27,36 +27,94 @@
 
 </header>
 
+
 <body>
     <div class="flex h-screen bg-gradient-to-r from-stone-400 to-purple-400 justify-center">
-        <div class="max-w-md w-full space-y-8">
-            <div class="mt-48 text-center text-3xl font-semibold text-gray-900">
-                <h2 class="text-5xl font-bold mb-4">Login</h2>
-                <form action="{% url 'login' %}" method="POST">
-                    {% csrf_token %}
-                    <div class="mb-4">
-                        <input type="text" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Enter your email" name="email">
+        <div class="flex items-center justify-center  max-h-screen mt-10 mb-10 bg-gray-800">
+            <div class="relative flex flex-col m-6 space-y-8 bg-gray-700 shadow-2xl rounded-5xl md:flex-row md:space-y-0">
+                <!-- left side -->
+                <div class="flex flex-col justify-center p-8 md:p-14">
+                    <span class="mb-3 text-4xl font-bold">Welcome back</span>
+                    <span class="font-light text-gray-400 mb-8">
+              Welcom back! Please enter your details
+            </span>
+                    <form action="{% url 'login' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="mb-4">
+                            <input type="text" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Enter your email" name="email">
+                        </div>
+                        <div class="mb-4">
+                            <input type="password" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Enter your password" name="password">
+                        </div>
+                        <div class="mb-6">
+                            <input type="submit" class="bg-blue-500 text-white px-2 py-1 rounded mt-4 hover:bg-blue-600 transition duration-300" value="Login">
+                        </div>
+                        <center>
+                            {% if success %}
+                            <p style="color: green;"><b>{{ success }}</b></p>
+                            {% endif %} {% if error %}
+                            <p style="color: red;">{{ error }}</p>
+                            {% endif %}
+                        </center>
+                    </form>
+                    <div class="flex justify-between w-full py-4">
+                        <div class="mr-24">
+                            <input type="checkbox" name="ch" id="ch" class="mr-2" />
+                            <span class="text-md">Remember for 30 days</span>
+                        </div>
+                        <span class="font-bold text-md">Forgot password</span>
                     </div>
-                    <div class="mb-4">
-                        <input type="password" class="border rounded px-4 py-2 w-full focus:outline-none focus:border-blue-500" placeholder="Enter your password" name="password">
+                    <button class="w-full bg-black text-white p-2 rounded-lg mb-6 hover:bg-white hover:text-black hover:border hover:border-gray-300">
+              Sign in
+            </button>
+                    <button class="w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-black hover:text-white">
+              <img src="" alt="img" class="w-6 h-6 inline mr-2" />
+              Sign in with Google
+            </button>
+                    <div class="text-center text-gray-400">
+                        Dont'have an account?
+                        <span class="font-bold text-black">Sign up for free</span>
                     </div>
-                    <div class="mb-6">
-                        <input type="submit" class="bg-blue-500 text-white px-2 py-1 rounded mt-4 hover:bg-blue-600 transition duration-300" value="Login">
+                </div>
+                <!-- {/* right side */} -->
+                <div class="relative">
+                    <img alt="img" class="w-[400px] h-full hidden rounded-r-2xl md:block object-cover" />
+                    <!-- text on image  -->
+                    <div class="absolute hidden bottom-10 right-6 p-6 bg-white bg-opacity-30 backdrop-blur-sm rounded drop-shadow-lg md:block">
+                        <span class="text-white text-xl">We've been uesing Untitle to kick"<br />start every new project
+                and can't <br />imagine working without it."
+              </span>
                     </div>
-                    <center>
-                        {% if success %}
-                        <p style="color: green;"><b>{{ success }}</b></p>
-                        {% endif %} {% if error %}
-                        <p style="color: red;">{{ error }}</p>
-                        {% endif %}
-                    </center>
-                </form>
-                <div class="signup mt-4 text-xl">
-                    <span class="signup">Don't have an account?<a href="{% url 'register' %}" class="text-blue-500">Sign up</a></span>
                 </div>
             </div>
         </div>
     </div>
+    <footer class="bg-gray-800 py-4 ">
+
+        <div class="container mx-auto flex items-center justify-between text-gray-400">
+            <select class="border bg-gray-800 rounded px-4 py-2  focus:outline-none focus:border-blue-500">
+            <option value="country1">India</option>
+            <option value="country2">United States</option>
+            <option value="country3">Australia</option>
+            <!-- Add more countries as needed -->
+        </select>
+
+
+            <select class="border bg-gray-800 rounded px-4 py-2  focus:outline-none focus:border-blue-500">
+            <option value="english">English</option>
+            <option value="spanish">Spanish</option>
+            <option value="french">French</option>
+            <!-- Add more languages as needed -->
+        </select>
+            <div class="mt-0">&copy; 2024 Vchat. All rights reserved.</div>
+        </div>
+
+    </footer>
+
+
+
+
+
 
 
 

@@ -31,10 +31,10 @@
 <body>
     <div class="flex h-screen bg-gradient-to-r from-stone-400 to-purple-400 justify-center">
         <div class="flex items-center justify-center  max-h-screen mt-10 mb-10 bg-gray-800">
-            <div class="relative flex flex-col m-6 space-y-8 bg-gray-700 shadow-2xl rounded-5xl md:flex-row md:space-y-0">
+            <div class="relative flex flex-col m-6 space-y-8 bg-purple-400 shadow-2xl rounded-5xl md:flex-row md:space-y-0">
                 <!-- left side -->
                 <div class="flex flex-col justify-center p-8 md:p-14">
-                    <span class="mb-3 text-4xl font-bold">Welcome back</span>
+                    <span class="mb-6 text-4xl font-bold">Welcome back</span>
 
                     <form action="{% url 'login' %}" method="POST">
                         {% csrf_token %}

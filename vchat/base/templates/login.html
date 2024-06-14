@@ -9,33 +9,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 </head>
-<header class="bg-gray-900 text-white flex items-center justify-between py-4 px-6">
-    <!-- Logo -->
-    <div class="flex items-center">
-        <img src="" alt="Logo" class="h-8 mr-2">
-        <h1 class="text-lg font-semibold text-blue-700">Vchat</h1>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="flex items-right">
-        <ul class="flex space-x-6">
 
 
-        </ul>
-    </nav>
 
 
-</header>
 
 
-<body>
-    <div class="fixed bottom-0 left-0 right-0 z-40 px-4 py-3 text-center text-white bg-gray-800">
-        "this is responsib login page!"
-    </div>
+<body class="bg-gray-200">
     <section class="min-h-screen flex items-stretch text-white">
-        <div class="lg:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center" style="background-image: url(https://images.unsplash.com/photo-1577495508048-b635879837f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80);">
+        <div class="lg:flex w-full  bg-gray-500 bg-no-repeat bg-cover relative items-center " style="background-image: url(https://images.unsplash.com/photo-1577495508048-b635879837f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80);">
             <div class="absolute bg-black opacity-60 inset-0 z-0"></div>
-            <div class="w-full px-24 z-10">
+            <div class="w-full px-24 z-10 justify-center ">
                 <h1 class="text-5xl font-bold text-left tracking-wide">Keep it special</h1>
                 <p class="text-3xl my-4">Capture your personal memory in a unique way, anywhere.</p>
             </div>
@@ -51,8 +35,9 @@
                 </span>
             </div>
         </div>
-        <div class="lg:w-1/2 w-full bg-gray-900 flex justify-center items-center">
-            <div class="max-w-md w-full space-y-8 p-8">
+        <div class="lg:w-1/2 w-full flex justify-center items-center md:px-16 px-0 z-0" style="background-color: #202020;">
+
+            <div class=" w-full space-y-8 p-8">
                 <h2 class="text-4xl font-bold text-center">Welcome Back!</h2>
                 <form action="{% url 'login' %}" method="POST">
                     {% csrf_token %}
@@ -82,7 +67,7 @@
                 </div>
 
                 <button class="w-full border border-gray-300 text-md p-2 rounded-lg mb-6 hover:bg-black hover:text-white">
-          <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png"  alt="img" class="w-2 h-3 inline mr-2" />
+          <img src=""  alt="img" class="w-2 h-3 inline mr-2" />
           Sign in with Google
         </button>
                 <div class="text-center text-gray-400">
@@ -103,6 +88,7 @@
         </div>
         </div>
         </div>
+
     </section>
 
 

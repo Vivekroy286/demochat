@@ -51,7 +51,7 @@
 
                 <form action="{% url 'join_room' %}" method="POST">
                     {% csrf_token %}
-                    <div class="mb-6 mt-6">
+                    <div class="mb-6 mt-8">
                         <input type="text" class="text-sm  px-10 py-2" placeholder="Enter Meeting ID or Personal Link Name" name="roomID">
                     </div>
                     <div class="mb-6 mt-6">

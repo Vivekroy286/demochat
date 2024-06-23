@@ -52,7 +52,7 @@
                 <form action="{% url 'join_room' %}" method="POST">
                     {% csrf_token %}
                     <div class="mb-6 mt-8">
-                        <input type="text" class="text-sm  px-10 py-2" placeholder="Enter Meeting ID or Personal Link Name" name="roomID">
+                        <input type="text" class="text-sm  px-10 py-2" placeholder="Enter Meeting ID" name="roomID">
                     </div>
                     <div class="mb-6 mt-6">
                         <input type="submit" class="bg-blue-500 text-white px-6 py-0.5 rounded mt-4 hover:bg-blue-600 transition duration-300" class='button' value="Join">

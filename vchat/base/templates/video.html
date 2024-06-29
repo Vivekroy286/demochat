@@ -75,8 +75,14 @@
             <div class="absolute bottom-0 left-0 right-0 flex justify-center mb-4">
                 <button id="btn-toggle-audio" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2">Audio Mute</button>
                 <button id="btn-toggle-video" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ml-2">Video Off</button>
+
+
             </div>
         </div>
+        <div class="mb-6 mt-6">
+            <a href="{% url 'logout' %}" <button class="bg-blue-700 hover:bg-blue-600 text-red-200 px-10 py-0.5 rounded">Logout</button></a>
+        </div>
+    </div>
     </div>
 
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>

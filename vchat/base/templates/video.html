@@ -33,56 +33,65 @@
 <body>
     <div class="relative h-screen bg-gray-800 flex flex-col">
 
-        <!-- Video Container -->
-        <div id="video-container" class="flex-grow flex justify-items-stretch place-items-stretch">
+        <!-- Top Navigation and Logout Button -->
+        <div class="flex justify-between items-center p-4">
+            <h1 class="text-2xl font-semibold text-white"></h1>
+            <a href="{% url 'logout' %}">
+                <button class="bg-blue-700 hover:bg-blue-600 text-white px-6 py-2 rounded">Logout</button>
+            </a>
+        </div>
 
-            <div class="grid grid-cols-2 gap-4">
-                <!-- Username Container -->
-                <div id="username-container" class="absolute items-center justify-center   bg-transparent p-8">
-                    <div class="flex flex-col ">
-                        <h3 class="text-2xl font-semibold mb-4 text-lg text-white" id="label_username">USERNAME</h3>
-                        <input id="username" class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 bg-white text-white mb-4">
-                        <button id="btn-join" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-r-md">Join Room</button>
-                    </div>
+        <!-- Main Content: Video Container and Chat -->
+        <div class="flex-grow flex">
+            <!-- Video Container -->
+            <div id="video-container" class="flex-1 flex justify-center items-center">
 
-                    <div class="relative overflow-hidden rounded-lg shadow-lg" style="width: 540px; height: 360px;">
+                <div class="grid grid-cols-2 gap-4">
+                    <!-- Local Video and Username Input -->
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
                         <video id="local-video" class="w-full h-full object-cover" autoplay playsinline></video>
+
                     </div>
-                    <div class="relative overflow-hidden rounded-lg shadow-lg" style="width: 540px; height: 360px;">
-                        <video id="remote-video" class="w-full h-full object-cover" autoplay playsinline></video>
-                    </div>
-                    <!-- Add more video elements as needed -->
+
+                    <!-- Remote Video -->
+                    <!--
+                        <div class="relative overflow-hidden rounded-lg shadow-lg">
+                            <video id="remote-video" class="w-full h-full object-cover" autoplay playsinline></video>
+                        </div>-->
                 </div>
+
             </div>
 
+        </div>
 
-
-            <!-- Chat Container -->
-
-            <div id="chat" class="w-1/3 absolute top-0 right-0 m-4 z-10 bg-gray-800 bg-transparent rounded-lg shadow-md">
-                <h3 class="text-lg font-semibold text-white p-4">CHAT</h3>
-                <div id="messages" class="p-4">
-                    <ul id="message-list"></ul>
-                </div>
-
-                <div class="flex">
-                    <input id="msg" type="text" class="flex-1 border border-gray-300 rounded-l-md px-4 py-2 focus:outline-none focus:border-blue-500 bg-gray-700 text-white" placeholder="Type your message...">
-                    <button id="btn-send-msg" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-r-md">Send</button>
-                </div>
-            </div>
-
-            <!-- Audio and Video Controls -->
-            <div class="absolute bottom-0 left-0 right-0 flex justify-center mb-4">
-                <button id="btn-toggle-audio" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2">Audio Mute</button>
-                <button id="btn-toggle-video" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ml-2">Video Off</button>
-
-
+        <!-- Username Container -->
+        <div id="username-container" class="absolute bottom-0 right-0 p-8">
+            <div class="bg-gray-900 bg-opacity-50 rounded-lg shadow-lg p-8 text-white bg-transparent p-8">
+                <h3 class="text-2xl font-semibold mb-4 text-lg text-white" id="label_username">USERNAME</h3>
+                <input id="username" class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 bg-white text-white mb-4">
+                <button id="btn-join" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-r-md">Join Room</button>
             </div>
         </div>
-        <div class="mb-6 mt-6">
-            <a href="{% url 'logout' %}" <button class="bg-blue-700 hover:bg-blue-600 text-red-200 px-10 py-0.5 rounded">Logout</button></a>
+
+        <!-- Chat Container -->
+
+        <div id="chat" class="w-1/3 absolute top-0 right-0 m-4 z-10 bg-gray-800 bg-transparent rounded-lg shadow-md">
+            <h3 class="text-lg font-semibold text-white p-4">CHAT</h3>
+            <div id="messages" class="p-4">
+                <ul id="message-list"></ul>
+            </div>
+
+            <div class="flex">
+                <input id="msg" type="text" class="flex-1 border border-gray-300 rounded-l-md px-4 py-2 focus:outline-none focus:border-blue-500 bg-gray-700 text-white" placeholder="Type your message...">
+                <button id="btn-send-msg" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-r-md">Send</button>
+            </div>
         </div>
-    </div>
+        <!-- Bottom Controls: Audio and Video Toggle Buttons -->
+        <div class="absolute bottom-0 left-0 right-0 flex justify-center mb-4">
+            <button id="btn-toggle-audio" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2">Audio Mute</button>
+            <button id="btn-toggle-video" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ml-2">Video Off</button>
+        </div>
+
     </div>
 
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>

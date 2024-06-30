@@ -39,32 +39,28 @@
 
 
         </header>
-        <div class="flex h-screen bg-gray-500 bg-no-repeat bg-cover justify-center  " style="background-image: url(https://images.pexels.com/photos/760645/pexels-photo-760645.jpeg?cs=srgb&dl=pexels-asifmethar-760645.jpg&fm=jpg);">
+        <div class="flex h-screen bg-gray-500 bg-no-repeat bg-cover justify-center" style="background-image: url(https://images.pexels.com/photos/760645/pexels-photo-760645.jpeg?cs=srgb&dl=pexels-asifmethar-760645.jpg&fm=jpg);">
             <div class="max-w-md w-full space-y-8">
-
                 <div class="mt-48 text-center text-3xl font-semibold text-gray-900">
-
-
-
                     <h1 class="text-3xl text-slate-400 font-serif mb-4">Welcome, {{name}}!</h1>
-
-
-
-                    <!-- create a "New Meeting" button -->
+                    <!-- Create Meeting Section -->
                     <div class="mb-6 mt-6">
                         <a href="{% url 'meeting' %}" <button class="bg-blue-700 hover:bg-blue-600 text-red-200 px-8 py-1 rounded">New Meeting</button></a>
                     </div>
                     <div class="mb-6 mt-6">
                         <a href="{% url 'join_room' %}" <button class="bg-blue-700 hover:bg-blue-600 text-red-200 px-8 py-1 rounded">Join Meeting</button></a>
                     </div>
+
+
+                    <!-- Logout Button -->
                     <div class="mb-6 mt-6">
                         <a href="{% url 'logout' %}" <button class="bg-blue-700 hover:bg-blue-600 text-red-200 px-10 py-0.5 rounded">Logout</button></a>
                     </div>
-
                 </div>
-
             </div>
         </div>
+
+
         <footer class="bg-gray-800 py-4 ">
 
             <div class="container mx-auto flex items-center justify-between text-gray-400">

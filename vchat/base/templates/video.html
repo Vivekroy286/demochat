@@ -3,6 +3,7 @@
 <html>
 
 <head>
+    <script src="https://cdn.tailwindcss.com"></script> {% tailwind_css %}
     <!--<header class="bg-gray-900 text-white flex items-center justify-between py-4 px-6">
         
         <div class="flex items-center">
@@ -31,77 +32,86 @@
 </head>
 
 <body>
-    <div class="relative h-screen bg-gray-800 flex flex-col">
 
-        <!-- Username Container -->
-        <div id="username-container" class="absolute top-0 left-0  p-2">
-            <div class="bg-gray-900 bg-opacity-50 rounded-lg shadow-lg p-4 text-white bg-transparent p-8">
-                <h3 class="text-2xl font-semibold mb-2 text-lg text-white" id="label_username">USERNAME</h3>
-                <input id="username" class="border border-gray-300 rounded-md px-2 py-2 focus:outline-none focus:border-blue-500 bg-white text-gray-800 mb-4">
-                <button id="btn-join" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-r-md">Join Room</button>
+    <body class="bg-gray-800">
+
+
+        <div class="relative h-screen flex flex-col">
+            <!-- Username Container -->
+            <div id="username-container" class="absolute top-0 left-0  md:w-1/4 p-2">
+                <div class="bg-transparent bg-opacity-50 rounded-lg shadow-lg p-4 text-white">
+                    <h3 class="text-2xl font-semibold mb-2" id="label_username">USERNAME</h3>
+                    <input id="username" class="border border-gray-300 rounded-md px-2 py-2 focus:outline-none focus:border-blue-500 bg-white text-gray-800 mb-4">
+                    <button id="btn-join" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md">Join Room</button>
+                </div>
             </div>
-        </div>
 
+            <!-- Main Content: Video Container and Chat -->
+            <div class="flex-grow flex">
 
+                <!-- Video Container -->
+                <div id="video-container" class="flex-1 flex justify-center items-center">
+                    <div class="grid grid-cols-1 md:grid-cols-2   md:max-w-3xl mx-auto">
+                        <!-- Local Video -->
+                        <div class="relative overflow-hidden  shadow-lg">
+                            <video id="local-video" class="w-full h-full object-cover" autoplay playsinline></video>
+                        </div>
 
-
-
-        <!-- Main Content: Video Container and Chat -->
-        <div class="flex-grow flex">
-            <!-- Video Container -->
-            <div id="video-container" class="w-full flex justify-center items-center">
-
-                <div class="grid-cols-2 justify-center items-center  ">
-                    <!-- Local Video and Username Input -->
-                    <div class="relative overflow-hidden  shadow-lg">
-                        <video id="local-video" class="w-full h-full object-cover" autoplay playsinline></video>
-
+                        <!-- Remote Video (Example commented out) -->
+                        <!--
+                        <div class="relative overflow-hidden rounded-lg shadow-lg">
+                            <video id="remote-video" class="w-full h-full object-cover" autoplay playsinline></video>
+                        </div>
+                        -->
                     </div>
+                </div>
 
-                    <!-- Remote Video -->
-                    <!--
-
-                    <div class="relative overflow-hidden rounded-lg shadow-lg">
-                        <video id="remote-video" class="w-full h-full object-cover" autoplay playsinline></video>
-                    </div>-->
+                <!-- Chat Container -->
+                <div id="chat" class="absolute top-0 right-0  md:w-1/4  bg-transparent rounded-lg shadow-md p-2">
+                    <h3 class="text-lg font-semibold text-white p-2">CHAT</h3>
+                    <div id="messages" class="text-white p-2 overflow-y-auto" style="max-height: 500px;">
+                        <ul id="message-list"></ul>
+                    </div>
+                    <div class="flex">
+                        <input id="msg" type="text" class="flex-1 border border-gray-300 rounded-l-md px-4 py-2 focus:outline-none focus:border-blue-500 bg-white text-gray-600" placeholder="Type your message...">
+                        <button id="btn-send-msg" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-r-md">Send</button>
+                        <div class="flex items-center ml-2" id="clear-chat-container" style="display: none;">
+                            <button id="btn-clear-chat" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-md">Clear Chat</button>
+                        </div>
+                    </div>
                 </div>
 
             </div>
 
-        </div>
-
-
-
-        <!-- Chat Container -->
-
-        <div id="chat" class="absolute top-0 right-0 w-1/4  bg-gray-700 bg-transparent rounded-lg shadow-md p-2">
-            <h3 class="text-lg font-semibold text-white p-2">CHAT</h3>
-            <div id="messages" class="text-white p-2 overflow-y-auto" style="max-height: 100px;">
-                <ul id="message-list"></ul>
+            <!-- Bottom Controls: Audio, Video, End Call, Logout -->
+            <div class="absolute bottom-0 left-0 right-0 flex justify-center mb-4">
+                <button id="btn-toggle-audio" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2">Audio Mute</button>
+                <button id="btn-toggle-video" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ml-2">Video Off</button>
+                <button id="btn-end-call" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded ml-2">End Call</button>
+                <a href="{% url 'logout' %}">
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ml-2 mr-2">Logout</button>
+                </a>
             </div>
 
-
-            <div class="flex">
-                <input id="msg" type="text" class="flex-1 border border-gray-300 rounded-l-md px-4 py-2 focus:outline-none focus:border-blue-500 bg-white text-gray-600" placeholder="Type your message...">
-                <button id="btn-send-msg" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-r-md">Send</button>
-                <div class="flex items-center mt-2" id="clear-chat-container" style="display: none;">
-                    <button id="btn-clear-chat" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-md">Clear Chat</button>
-                </div>
-            </div>
-        </div>
-        <!-- Bottom Controls: Audio and Video Toggle Buttons -->
-        <div class="absolute bottom-0 left-0 right-0 flex justify-center mb-4">
-            <button id="btn-toggle-audio" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2">Audio Mute</button>
-            <button id="btn-toggle-video" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ml-2">Video Off</button>
-            <a href="{% url 'logout' %}">
-                <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ml-2 mr-2">Logout</button>
-            </a>
         </div>
 
-    </div>
 
-    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-    {% tailwind_css %}
-</body>
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Get the End Call button by its ID
+                const endCallButton = document.getElementById('btn-end-call');
+
+                // Add event listener to the End Call button
+                endCallButton.addEventListener('click', function() {
+                    console.log('End call button clicked');
+
+                    // Reload the current page
+                    window.location.reload();
+                });
+            });
+        </script>
+        {% tailwind_css %}
+    </body>
 
 </html>

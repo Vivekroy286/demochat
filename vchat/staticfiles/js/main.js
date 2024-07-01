@@ -381,3 +381,33 @@ function getDataChannels() {
 document.getElementById('btn-log-out').addEventListener('click', (e) => {
     window.location.href = "/login";
 })
+
+// Select elements
+const messagesContainer = document.getElementById('messages');
+const clearChatContainer = document.getElementById('clear-chat-container');
+const clearChatButton = document.getElementById('btn-clear-chat');
+
+// Check if messages container has reached full height
+function checkChatHeight() {
+    // Maximum height of messages container
+    const maxHeight = messagesContainer.scrollHeight;
+
+    // Current scroll position of messages container
+    const scrollPosition = messagesContainer.scrollTop + messagesContainer.clientHeight;
+
+    // Toggle visibility of clear chat button based on scroll position
+    if (scrollPosition >= maxHeight) {
+        clearChatContainer.style.display = 'flex'; // Show clear chat button container
+    } else {
+        clearChatContainer.style.display = 'none'; // Hide clear chat button container
+    }
+}
+
+// Event listener for scroll events on messages container
+messagesContainer.addEventListener('scroll', checkChatHeight);
+
+// Event listener for clear chat button
+clearChatButton.addEventListener('click', function() {
+    document.getElementById('message-list').innerHTML = ''; // Clear messages
+    clearChatContainer.style.display = 'none'; // Hide clear chat button after clearing messages
+});

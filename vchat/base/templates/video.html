@@ -3,8 +3,8 @@
 <html>
 
 <head>
-    <header class="bg-gray-900 text-white flex items-center justify-between py-4 px-6">
-        <!-- Logo -->
+    <!--<header class="bg-gray-900 text-white flex items-center justify-between py-4 px-6">
+        
         <div class="flex items-center">
 
             <img src="https://img.freepik.com/free-psd/3d-circle-with-vimeo-logo-isolated-transparent-background_125540-3734.jpg?t=st=1718780291~exp=1718783891~hmac=bda798db48a764b20f76eb053971a347221002f32f86f3e0523ac25f980f1eb2&w=740" alt="Logo" class="h-8 mr-2">
@@ -12,7 +12,7 @@
             <h1 class="text-lg font-semibold text-blue-700">Vchat</h1>
         </div>
 
-        <!-- Navigation -->
+        
         <nav class="flex items-right">
             <ul class="flex space-x-6">
             </ul>
@@ -25,71 +25,77 @@
             <option value="">video call</option>
             <option value="">audio call</option>
             <option value="">Support center</option>
-            <!-- Add more languages as needed -->
+            
         </select>
-    </header>
+    </header>-->
 </head>
 
 <body>
     <div class="relative h-screen bg-gray-800 flex flex-col">
 
-        <!-- Top Navigation and Logout Button -->
-        <div class="flex justify-between items-center p-4">
-            <h1 class="text-2xl font-semibold text-white"></h1>
-            <a href="{% url 'logout' %}">
-                <button class="bg-blue-700 hover:bg-blue-600 text-white px-6 py-2 rounded">Logout</button>
-            </a>
+        <!-- Username Container -->
+        <div id="username-container" class="absolute top-0 left-0  p-2">
+            <div class="bg-gray-900 bg-opacity-50 rounded-lg shadow-lg p-4 text-white bg-transparent p-8">
+                <h3 class="text-2xl font-semibold mb-2 text-lg text-white" id="label_username">USERNAME</h3>
+                <input id="username" class="border border-gray-300 rounded-md px-2 py-2 focus:outline-none focus:border-blue-500 bg-white text-gray-800 mb-4">
+                <button id="btn-join" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-r-md">Join Room</button>
+            </div>
         </div>
+
+
+
+
 
         <!-- Main Content: Video Container and Chat -->
         <div class="flex-grow flex">
             <!-- Video Container -->
-            <div id="video-container" class="flex-1 flex justify-center items-center">
+            <div id="video-container" class="w-full flex justify-center items-center">
 
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid-cols-2 justify-center items-center  ">
                     <!-- Local Video and Username Input -->
-                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                    <div class="relative overflow-hidden  shadow-lg">
                         <video id="local-video" class="w-full h-full object-cover" autoplay playsinline></video>
 
                     </div>
 
                     <!-- Remote Video -->
                     <!--
-                        <div class="relative overflow-hidden rounded-lg shadow-lg">
-                            <video id="remote-video" class="w-full h-full object-cover" autoplay playsinline></video>
-                        </div>-->
+
+                    <div class="relative overflow-hidden rounded-lg shadow-lg">
+                        <video id="remote-video" class="w-full h-full object-cover" autoplay playsinline></video>
+                    </div>-->
                 </div>
 
             </div>
 
         </div>
 
-        <!-- Username Container -->
-        <div id="username-container" class="absolute bottom-0 right-0 p-8">
-            <div class="bg-gray-900 bg-opacity-50 rounded-lg shadow-lg p-8 text-white bg-transparent p-8">
-                <h3 class="text-2xl font-semibold mb-4 text-lg text-white" id="label_username">USERNAME</h3>
-                <input id="username" class="border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:border-blue-500 bg-white text-white mb-4">
-                <button id="btn-join" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-r-md">Join Room</button>
-            </div>
-        </div>
+
 
         <!-- Chat Container -->
 
-        <div id="chat" class="w-1/3 absolute top-0 right-0 m-4 z-10 bg-gray-800 bg-transparent rounded-lg shadow-md">
-            <h3 class="text-lg font-semibold text-white p-4">CHAT</h3>
-            <div id="messages" class="p-4">
+        <div id="chat" class="absolute top-0 right-0 w-1/4  bg-gray-700 bg-transparent rounded-lg shadow-md p-2">
+            <h3 class="text-lg font-semibold text-white p-2">CHAT</h3>
+            <div id="messages" class="text-white p-2 overflow-y-auto" style="max-height: 100px;">
                 <ul id="message-list"></ul>
             </div>
 
+
             <div class="flex">
-                <input id="msg" type="text" class="flex-1 border border-gray-300 rounded-l-md px-4 py-2 focus:outline-none focus:border-blue-500 bg-gray-700 text-white" placeholder="Type your message...">
+                <input id="msg" type="text" class="flex-1 border border-gray-300 rounded-l-md px-4 py-2 focus:outline-none focus:border-blue-500 bg-white text-gray-600" placeholder="Type your message...">
                 <button id="btn-send-msg" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-r-md">Send</button>
+                <div class="flex items-center mt-2" id="clear-chat-container" style="display: none;">
+                    <button id="btn-clear-chat" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-md">Clear Chat</button>
+                </div>
             </div>
         </div>
         <!-- Bottom Controls: Audio and Video Toggle Buttons -->
         <div class="absolute bottom-0 left-0 right-0 flex justify-center mb-4">
             <button id="btn-toggle-audio" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2">Audio Mute</button>
             <button id="btn-toggle-video" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ml-2">Video Off</button>
+            <a href="{% url 'logout' %}">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ml-2 mr-2">Logout</button>
+            </a>
         </div>
 
     </div>

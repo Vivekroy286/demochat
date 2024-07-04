@@ -22,10 +22,10 @@
 
         <!-- Navigation Links -->
         <nav class="sm:flex  items-center px-8 space-x-8">
-            <a href="#" class="hover:text-gray-300">Home</a>
-            <a href="#" class="hover:text-gray-300">About</a>
-            <a href="#" class="hover:text-gray-300">Services</a>
-            <a href="#" class="hover:text-gray-300">Contact</a>
+            <a href="#" class="hover:text-gray-300"></a>
+            <a href="#" class="hover:text-gray-300"></a>
+            <a href="#" class="hover:text-gray-300"></a>
+            <a href="#" class="hover:text-gray-300"></a>
         </nav>
 
         <!-- Buttons -->
@@ -33,7 +33,7 @@
             <a href="{% url 'login' %}" class="flex md:inline-block bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Sign
                 In</a>
             <a href="{% url 'register' %}" class="flex md:inline-block bg-gray-300 hover:bg-gray-400 text-gray-800 px-4 py-2 rounded">Sign
-                Up, It's Free</a>
+                Up</a>
 
         </div>
     </header>
@@ -81,7 +81,7 @@
 
 
                     </p>
-                    <button class="mt-8 text-white uppercase py-3 text-sm px-10 border border-white hover:bg-white hover:bg-opacity-10">Talk with expert</button>
+                    <button class="mt-8 text-white uppercase py-3 text-sm px-10 border border-white hover:bg-white hover:bg-opacity-10"><a href="{% url 'login' %}" >Talk with friends</a></button>
                 </div>
             </div>
         </div>
@@ -97,7 +97,7 @@
                     <p class="text-sky-950 text-sm">
                         Your privacy and security are our top priorities. Rest assured, Vchat provides a safe environment for all your interactions.
                     </p>
-                    <button class="mt-8 text-sky-950 uppercase py-3 text-sm px-10 border border-sky-950 hover:bg-white hover:bg-opacity-10">Talk with expert</button>
+                    <button class="mt-8 text-sky-950 uppercase py-3 text-sm px-10 border border-sky-950 hover:bg-white hover:bg-opacity-10"><a href="{% url 'login' %}" >Talk with friends</a></button>
                 </div>
             </div>
             <div class="w-full flex flex-col pl-16">
@@ -126,7 +126,7 @@
                         Vchat is more than just a video call platform. It's a gateway to meaningful connections, where every interaction counts. Whether you're catching up with friends, collaborating on projects, or hosting virtual gatherings, Vchat empowers you to stay connected
                         and share moments, seamlessly.
                     </p>
-                    <button class="mt-8 text-white uppercase py-3 text-sm px-10 border border-white hover:bg-white hover:bg-opacity-10">Talk with expert</button>
+                    <button class="mt-8 text-white uppercase py-3 text-sm px-10 border border-white hover:bg-white hover:bg-opacity-10"><a href="{% url 'login' %}" >Talk with friends</a></button>
                 </div>
             </div>
         </div>
@@ -135,12 +135,12 @@
     <footer class="bg-gray-800 py-4">
         <div class="sm:flex container mx-auto  items-center justify-between text-gray-400">
             <div>
-                <p>&copy; 2024 Vchat. All rights reserved.</p>
+                <p></p>
             </div>
             <div>
-                <a href="#" class=" mr-4">Terms and Conditions</a>
-                <a href="#" class=" mr-4">Cookies</a>
-                <a href="{% url 'register' %}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Sign Up, It's Free</a>
+                <a href="#" class=" mr-4"></a>
+                <a href="#" class=" mr-4"></a>
+                <a href="{% url 'register' %}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Sign Up</a>
             </div>
         </div>
     </footer>

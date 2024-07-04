@@ -26,7 +26,7 @@
 
                 </ul>
             </nav>
-            <select class="border bg-gray-800 rounded px-4 py-2  focus:outline-none focus:border-blue-500">
+            <!---<select class="border bg-gray-800 rounded px-4 py-2  focus:outline-none focus:border-blue-500">
                 <option value="">More</option>
                 <option value="">Features</option>
                 <option value="">Your Impact</option>
@@ -34,31 +34,38 @@
                 <option value="">video call</option>
                 <option value="">audio call</option>
                 <option value="">Support center</option>
-                <!-- Add more languages as needed -->
-            </select>
+                
+            </select>--->
 
 
         </header>
-        <div class="flex h-screen bg-gray-500 bg-no-repeat bg-cover justify-center" style="background-image: url(https://images.pexels.com/photos/760645/pexels-photo-760645.jpeg?cs=srgb&dl=pexels-asifmethar-760645.jpg&fm=jpg);">
-            <div class="max-w-md w-full space-y-8">
-                <div class="mt-48 text-center text-3xl font-semibold text-gray-900">
+        <div class="flex flex-col h-screen bg-gray-500 bg-no-repeat bg-cover justify-center" style="background-image: url(https://images.pexels.com/photos/760645/pexels-photo-760645.jpeg?cs=srgb&dl=pexels-asifmethar-760645.jpg&fm=jpg);">
+            <div class="max-w-md mx-auto p-6 space-y-8">
+                <div class="text-center text-3xl font-semibold text-gray-900">
                     <h1 class="text-3xl text-slate-400 font-serif mb-4">Welcome, {{name}}!</h1>
+
                     <!-- Create Meeting Section -->
-                    <div class="mb-6 mt-6">
-                        <a href="{% url 'meeting' %}" <button class="bg-blue-700 hover:bg-blue-600 text-red-200 px-8 py-1 rounded">New Meeting</button></a>
-                    </div>
-                    <div class="mb-6 mt-6">
-                        <a href="{% url 'join_room' %}" <button class="bg-blue-700 hover:bg-blue-600 text-red-200 px-8 py-1 rounded">Join Meeting</button></a>
+                    <div class="space-y-4">
+                        <!-- New Meeting -->
+                        <a href="{% url 'meeting' %}" class="relative block bg-indigo-500 hover:bg-indigo-600 text-red-200 px-8 py-4 rounded-xl text-center transition duration-300 ease-in-out transform hover:scale-105">
+                            <span class="text-lg font-semibold">New Meeting</span>
+                        </a>
+
+                        <!-- Join Meeting -->
+                        <a href="{% url 'join_room' %}" class="relative block bg-indigo-500 hover:bg-indigo-600 text-red-200 px-8 py-4 rounded-xl text-center transition duration-300 ease-in-out transform hover:scale-105">
+                            <span class="text-lg font-semibold">Join Meeting</span>
+                        </a>
+
+                        <!-- Logout Button -->
+                        <a href="{% url 'logout' %}" class="relative block bg-indigo-500 hover:bg-indigo-600 text-red-200 px-10 py-4 rounded-xl text-center transition duration-300 ease-in-out transform hover:scale-105">
+                            <span class="text-lg font-semibold">Logout</span>
+                        </a>
                     </div>
 
-
-                    <!-- Logout Button -->
-                    <div class="mb-6 mt-6">
-                        <a href="{% url 'logout' %}" <button class="bg-blue-700 hover:bg-blue-600 text-red-200 px-10 py-0.5 rounded">Logout</button></a>
-                    </div>
                 </div>
             </div>
         </div>
+
 
 
         <footer class="bg-gray-800 py-4 ">
@@ -70,9 +77,9 @@
                 <option value="french">French</option>
                 <!-- Add more languages as needed -->
             </select>
-                <div class="mt-0">&copy; 2024 Vchat. All rights reserved.</div>
+                <!--<div class="mt-0">&copy; 2024 Vchat. All rights reserved.</div>
                 <div class="mt-0">Help</div>
-                <div class="mt-0">&copy; 2024 Vchat Terms and Services</div>
+                <div class="mt-0">&copy; 2024 Vchat Terms and Services</div>-->
             </div>
         </footer>
         {% tailwind_css %}

@@ -39,8 +39,8 @@
 
         <div class="relative h-screen flex flex-col">
             <!-- Username Container -->
-            <div id="username-container" class="absolute top-0 left-0  md:w-1/4 p-2">
-                <div class="bg-transparent bg-opacity-50 rounded-lg  p-4 text-white">
+            <div id="username-container" class="absolute top-0 left-0 md:w-1/4 p-2">
+                <div class="bg-transparent bg-opacity-50 rounded-lg p-4 text-white">
                     <h3 class="text-2xl font-semibold mb-2" id="label_username">USERNAME</h3>
                     <input id="username" class="border border-gray-300 rounded-md px-2 py-2 focus:outline-none focus:border-blue-500 bg-white text-gray-800 mb-4">
                     <button id="btn-join" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md">Join Room</button>
@@ -62,52 +62,71 @@
                     </div>
                 </div>
 
-                <!-- Chat Container -->
-                <div id="chat" class="absolute top-0 right-0  md:w-1/4  bg-transparent rounded-lg  p-2">
-                    <h3 class="text-lg font-semibold text-white p-2">CHAT</h3>
-                    <div id="messages" class="text-white p-2 overflow-y-auto" style="max-height: 500px;">
-                        <ul id="message-list"></ul>
-                    </div>
-                    <div class="flex">
-                        <input id="msg" type="text" class="flex-1 border border-gray-300 rounded-l-md px-4 py-2 focus:outline-none focus:border-blue-500 bg-white text-gray-600" placeholder="Type your message...">
-                        <button id="btn-send-msg" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-r-md">Send</button>
-                        <div class="flex items-center ml-2" id="clear-chat-container" style="display: none;">
+
+
+
+
+                <!-- Chat Sidebar -->
+                <div id="chat" class="fixed top-0 right-0 h-full md:w-1/4 bg-gray-800 text-white transform transition-transform duration-300 ease-in-out translate-x-full">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">CHAT</h3>
+                        <div id="messages" class="text-white p-2 overflow-y-auto" style="max-height: calc(100% - 40px);">
+                            <ul id="message-list"></ul>
+                        </div>
+                        <div class="flex mt-4">
+                            <input id="msg" type="text" class="flex-1 border border-gray-300 rounded-l-md px-4 py-2 focus:outline-none focus:border-blue-500 bg-white text-gray-600" placeholder="Type your message...">
+                            <button id="btn-send-msg" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-r-md">Send</button>
+                        </div>
+                        <div class="flex items-center mt-2" id="clear-chat-container" style="display: none;">
                             <button id="btn-clear-chat" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-md">Clear Chat</button>
                         </div>
                     </div>
                 </div>
 
+
+                <!-- Chat Toggle Button -->
+                <button id="toggle-chat" class="fixed top-10 right-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md z-10">Chat Room</button>
+
+                <!-- Bottom Controls: Audio, Video, End Call, Logout -->
+                <div class="absolute bottom-0 left-0 right-0 flex justify-center mb-4">
+                    <button id="btn-toggle-audio" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2">Audio Mute</button>
+                    <button id="btn-toggle-video" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ml-2">Video Off</button>
+                    <button id="btn-end-call" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded ml-2">End Call</button>
+                    <a href="{% url 'logout' %}">
+                        <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ml-2 mr-2">Logout</button>
+                    </a>
+                </div>
+
             </div>
 
-            <!-- Bottom Controls: Audio, Video, End Call, Logout -->
-            <div class="absolute bottom-0 left-0 right-0 flex justify-center mb-4">
-                <button id="btn-toggle-audio" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2">Audio Mute</button>
-                <button id="btn-toggle-video" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ml-2">Video Off</button>
-                <button id="btn-end-call" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded ml-2">End Call</button>
-                <a href="{% url 'logout' %}">
-                    <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ml-2 mr-2">Logout</button>
-                </a>
-            </div>
 
-        </div>
+            <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Get the End Call button by its ID
+                    const endCallButton = document.getElementById('btn-end-call');
 
+                    // Add event listener to the End Call button
+                    endCallButton.addEventListener('click', function() {
+                        console.log('End call button clicked');
 
-        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // Get the End Call button by its ID
-                const endCallButton = document.getElementById('btn-end-call');
-
-                // Add event listener to the End Call button
-                endCallButton.addEventListener('click', function() {
-                    console.log('End call button clicked');
-
-                    // Reload the current page
-                    window.location.reload();
+                        // Reload the current page
+                        window.location.reload();
+                    });
                 });
-            });
-        </script>
-        {% tailwind_css %}
+
+                document.addEventListener('DOMContentLoaded', function() {
+                    const chatContainer = document.getElementById('chat');
+                    const toggleChatBtn = document.getElementById('toggle-chat');
+
+                    // Toggle chat visibility
+                    toggleChatBtn.addEventListener('click', function() {
+                        chatContainer.classList.toggle('translate-x-full');
+                        chatContainer.classList.toggle('-translate-x-0');
+                    });
+                });
+            </script>
+            {% tailwind_css %}
     </body>
 
 </html>

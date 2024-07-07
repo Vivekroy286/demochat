@@ -87,8 +87,10 @@
             <div class="absolute bottom-0 left-0 right-0 flex justify-center mb-4">
                 <button id="btn-toggle-audio" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2">Audio Mute</button>
                 <button id="btn-toggle-video" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ml-2">Video Off</button>
-                <button id="btn-end-call" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded ml-2">End Call</button>
-                <a href="{% url 'logout' %}">
+                <a href="{% url 'dashboard' %}">
+                    <button id="btn-end-call" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded ml-2">End Call</button>
+                </a>
+                <a href="{% url 'login' %}">
                     <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded ml-2 mr-2">Logout</button>
                 </a>
             </div>
@@ -100,19 +102,6 @@
 
         <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                // Get the End Call button by its ID
-                const endCallButton = document.getElementById('btn-end-call');
-
-                // Add event listener to the End Call button
-                endCallButton.addEventListener('click', function() {
-                    console.log('End call button clicked');
-
-                    // Reload the current page
-                    window.location.reload();
-                });
-            });
-
             document.addEventListener('DOMContentLoaded', function() {
                 const chatContainer = document.getElementById('chat');
                 const toggleChatBtn = document.getElementById('toggle-chat');

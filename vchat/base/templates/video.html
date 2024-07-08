@@ -41,12 +41,14 @@
 
 
             <!-- Main Content: Video Container and Chat -->
-            <div class="flex-grow flex justify-center items-center bg-gray-800">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-screen-lg mx-auto">
-                    <div class="flex justify-center items-center bg-gray-800 rounded-lg shadow p-4">
-                        <video id="local-video" class="w-full rounded-lg shadow-lg" autoplay muted playsinline></video>
+            <div class="flex justify-between bg-gray-800 p-4">
+                <div class="w-1/2">
+                    <video id="local-video" class="w-full  shadow-lg transform scale-x-[-1]" autoplay playsinline></video>
+                </div>
+                <div class="w-1/2">
+                    <div class="relative">
+                        <div id="video-container" class="grid grid-cols-1 gap-4 transform scale-x-[-1]"></div>
                     </div>
-                    <div id="video-container" class="grid grid-cols-1 gap-4"></div>
                 </div>
             </div>
 
@@ -81,7 +83,7 @@
 
 
             <!-- Chat Toggle Button -->
-            <button id="toggle-chat" class="fixed top-10 right-4 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md z-10">Chat Room</button>
+            <button id="toggle-chat" class="fixed top-10 right-2 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md z-10">Chat Room</button>
 
             <!-- Bottom Controls: Audio, Video, End Call, Logout -->
             <div class="absolute bottom-0 left-0 right-0 flex justify-center mb-4">

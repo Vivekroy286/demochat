@@ -37,7 +37,8 @@
     <body class="bg-gray-800 text-white">
 
 
-        <div class=" min-h-screen flex flex-col md:flex-row">
+        <div class="min-h-screen flex flex-col sm:flex-col md:flex-row">
+
 
 
             <!-- Main Content: Video Container and Chat -->
@@ -47,7 +48,7 @@
                 </div>
                 <div class="w-1/2">
                     <div class="relative">
-                        <div id="video-container" class="grid grid-cols-1 gap-4 transform scale-x-[-1]"></div>
+                        <div id="video-container" class="grid grid-cols-1 gap-4 transform scale-x-[-1]" autoplay playsinline></div>
                     </div>
                 </div>
             </div>
@@ -64,8 +65,8 @@
                     <div id="messages" class="text-white p-2 overflow-y-auto" style="max-height: calc(100% - 40px);">
                         <ul id="message-list"></ul>
                     </div>
-                    <div class="flex mt-4">
-                        <input id="msg" type="text" class="flex-1 border border-gray-300 rounded-l-md px-4 py-2 focus:outline-none focus:border-blue-500 bg-white text-gray-600" placeholder="Type your message...">
+                    <div class="flex flex-col sm:flex-row mt-4">
+                        <input id="msg" type="text" class="flex-1 border border-gray-300 rounded-l-md px-4 py-2 focus:outline-none focus:border-blue-500 bg-white text-gray-600" placeholder="Type your message">
                         <button id="btn-send-msg" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-r-md">Send</button>
                     </div>
                     <div class="flex items-center mt-2" id="clear-chat-container" style="display: none;">

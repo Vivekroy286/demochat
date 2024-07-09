@@ -247,7 +247,13 @@ function createOfferer(peerUsername, receiver_channel_name) {
 }
 
 function createAnswerer(offer, peerUsername, receiver_channel_name) {
-    var peer = new RTCPeerConnection(null);
+    var configuration = {
+        iceServers: [
+            { urls: 'stun:stun.l.google.com:19302' }
+            // Add more STUN or TURN servers here if needed
+        ]
+    };
+    var peer = new RTCPeerConnection(configuration);
 
     addLocalTracks(peer);
 

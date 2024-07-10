@@ -195,7 +195,21 @@ function sendSignal(action, message) {
 }
 
 function createOfferer(peerUsername, receiver_channel_name) {
-    var peer = new RTCPeerConnection(null);
+
+
+    var configuration = {
+        iceServers: [
+            { urls: 'stun:stun.l.google.com:19302' }, // STUN server
+            {
+                urls: 'turn:turn.google.com:19305',
+                username: 'webrtc',
+                credential: 'secret'
+            }
+            // Add more TURN servers if needed
+        ]
+    };
+
+    var peer = new RTCPeerConnection(configuration);
 
     addLocalTracks(peer);
 
@@ -247,12 +261,19 @@ function createOfferer(peerUsername, receiver_channel_name) {
 }
 
 function createAnswerer(offer, peerUsername, receiver_channel_name) {
+
     var configuration = {
         iceServers: [
-            { urls: 'stun:stun.l.google.com:19302' }
-            // Add more STUN or TURN servers here if needed
+            { urls: 'stun:stun.l.google.com:19302' }, // STUN server
+            {
+                urls: 'turn:turn.google.com:19305',
+                username: 'webrtc',
+                credential: 'secret'
+            }
+            // Add more TURN servers if needed
         ]
     };
+
     var peer = new RTCPeerConnection(configuration);
 
     addLocalTracks(peer);

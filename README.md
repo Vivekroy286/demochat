@@ -1,18 +1,18 @@
-#Vchat
+# Vchat
 Vchat is a real-time video confrencing application built using Node.js and Socket.io, designed for seamless communication between users.
 Description: This project was made for learning how to signal WebRTC SDPs using Javascript WebSocket and django-channels to make multi-peer video conferencing systems.
-##Features
+## Features
 Real-time Messaging: Instantaneous message delivery between users.
 User Authentication: Simple username-based authentication for joining chats.
 Typing Indicators: Displays when a user is typing a message.
 Message History: Persists chat history for current session.
 User Online Status: Indicates active users in the chat room.
 Emojis and Reactions: Supports emojis for expressive messaging.
-##Demo
+## Demo
 View a live demo of vChat [here](https://vchat-990c.onrender.com).
-##Screenshots:
+## Screenshots:
 
-##Installation:
+## Installation:
 To run Vchat locally, follow these steps:
 
 
@@ -34,7 +34,6 @@ Usage: From the directory where we have installed venv, go to the mysite directo
 
 To start the development server, run the command: python manage.py runserver
 
-For testing on multiple devices in the same LAN, go to the directory where you have installed ngrok. Run the command: ngrok.exe http 8000 This will make our localhost public and provide two public URLs. However, make sure to always use the one that starts with https: and not http: as we will be accessing media devices.
 
 On local device, go to http://127.0.0.1:8000/ On other devices, go to the URL from ngrok that starts with https:.
 

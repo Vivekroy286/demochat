@@ -28,14 +28,14 @@ Ensure latest version of pip by running: python -m pip install --upgrade pip
 
 Install the dependencies by running the command: pip install -r requirements.txt
 
-We need multiple devices in the same LAN for testing. For that we need to make our localhost public. For that, download ngrok from https://ngrok.com/download and install it.
+We need multiple devices in the same LAN for testing. For that we need to make our localhost public. 
 
 Usage: From the directory where we have installed venv, go to the mysite directory by running the command: cd mysite
 
 To start the development server, run the command: python manage.py runserver
 
 
-On local device, go to http://127.0.0.1:8000/ On other devices, go to the URL from ngrok that starts with https:.
+On local device, go to http://127.0.0.1:8000/ On other devices.
 
 Once the page is loaded, type a username and click join room from each device. Be sure to use different usernames for now.
 

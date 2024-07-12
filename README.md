@@ -20,7 +20,7 @@ Run the command: git clone [https://github.com/Vivekroy286/demochat](https://git
 
 Go to the directory with **requirements.txt**.
 
-Run the command: python -m venv venv
+Run the command: '''python -m venv venv'''
 
 After a venv directory is created, run the command for windows: venv\Scripts\activate.bat run the command for Unix or MacOS: source venv/bin/activate
 

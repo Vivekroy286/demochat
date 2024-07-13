@@ -1,13 +1,16 @@
 # Vchat
 Vchat is a real-time video confrencing application built using Node.js and Socket.io, designed for seamless communication between users.
-Description: This project was made for learning how to signal WebRTC SDPs using Javascript WebSocket and django-channels to make multi-peer video conferencing systems.
+## Description:
+This project was made for learning how to signal WebRTC SDPs using Javascript WebSocket and django-channels to make multi-peer video conferencing systems.
 ## Features
 Real-time Messaging: Instantaneous message delivery between users.
+
 User Authentication: Simple username-based authentication for joining chats.
+
 Typing Indicators: Displays when a user is typing a message.
+
 Message History: Persists chat history for current session.
-User Online Status: Indicates active users in the chat room.
-Emojis and Reactions: Supports emojis for expressive messaging.
+
 ## Demo
 View a live demo of vChat [here](https://vchat-990c.onrender.com).
 ## Screenshots:
@@ -51,8 +54,11 @@ Enjoy the seamless communication experience!
 
 ## Technologies Used
 Backend: python ,django
+
 Frontend: HTML, CSS, JavaScript
+
 Real-time Communication: Socket.io
+
 Data Persistence: sqlite3
 
 ## Contributing
@@ -60,7 +66,9 @@ Contributions are welcome! If you'd like to contribute to Vchat, fork the reposi
 
 ## Roadmap
 Implement end-to-end encryption for enhanced security.
+
 Integrate video and voice chat features using WebRTC.
+
 Enhance UI/UX with customizable themes and user profiles.
 
 

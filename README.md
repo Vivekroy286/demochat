@@ -36,12 +36,33 @@ Install the dependencies by running the command:
 
 We need multiple devices in the same LAN for testing. For that we need to make our localhost public. 
 
-Usage: From the directory where we have installed venv, go to the mysite directory by running the command: cd mysite
+## Usage:
+From the directory where we have installed venv, go to the mysite directory by running the command: ```cd mysite```
 
 To start the development server, run the command: ```python manage.py runserver```
-
 
 On local device, go to http://127.0.0.1:8000/ On other devices.
 
 Once the page is loaded, type a username and click join room from each device. Be sure to use different usernames for now.
+
+Type messages in the input box at the bottom and press Enter to send.
+
+Enjoy the seamless communication experience!
+
+## Technologies Used
+Backend: python ,django
+Frontend: HTML, CSS, JavaScript
+Real-time Communication: Socket.io
+Data Persistence: sqlite3
+
+## Contributing
+Contributions are welcome! If you'd like to contribute to Vchat, fork the repository and submit a pull request. Please follow the code of conduct.
+
+## Roadmap
+Implement end-to-end encryption for enhanced security.
+Integrate video and voice chat features using WebRTC.
+Enhance UI/UX with customizable themes and user profiles.
+
+
+
 

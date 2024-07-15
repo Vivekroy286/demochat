@@ -13,7 +13,7 @@ Message History: Persists chat history for current session.
 
 ## Demo
 View a live demo of vChat [here](https://vchat-990c.onrender.com).
-## Screenshots:
+
 
 ## Installation:
 To run Vchat locally, follow these steps:

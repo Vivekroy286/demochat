@@ -265,11 +265,7 @@ function createAnswerer(offer, peerUsername, receiver_channel_name) {
     var configuration = {
         iceServers: [
             { urls: 'stun:stun.l.google.com:19302' }, // STUN server
-            {
-                urls: 'turn:turn.google.com:19305',
-                username: 'webrtc',
-                credential: 'secret'
-            }
+
             // Add more TURN servers if needed
         ]
     };

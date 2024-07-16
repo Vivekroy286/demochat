@@ -1,5 +1,5 @@
 # Vchat
-Vchat is a real-time video confrencing application built using Node.js and Socket.io, designed for seamless communication between users.
+Vchat is a real-time video confrencing application built using webrtc and Socket.io, designed for seamless communication between users.
 ## Description:
 This project was made for learning how to signal WebRTC SDPs using Javascript WebSocket and django-channels to make multi-peer video conferencing systems.
 ## Features
